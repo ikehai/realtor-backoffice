@@ -1,0 +1,33 @@
+{
+  // OpenClaw minimal config - WhatsApp self-chat only
+  // Replace YOUR_PHONE_NUMBER with your WhatsApp number in international format e.g. +13051234567
+
+  gateway: {
+    port: 18789,
+    verbose: false,
+  },
+
+  // AI model - fill in your OpenAI API key
+  models: {
+    default: "openai:gpt-4o",
+    openai: {
+      apiKey: "sk-YOUR_OPENAI_API_KEY_HERE",
+    },
+  },
+
+  // WhatsApp channel - self-chat mode only
+  // dmPolicy "self" means the bot ONLY responds to messages you send to yourself
+  channels: {
+    whatsapp: {
+      enabled: true,
+      dmPolicy: "self",          // ONLY chat with yourself - no external DMs processed
+      allowFrom: [],             // empty = no one else allowed
+    },
+  },
+
+  // Agent identity
+  agent: {
+    name: "Realtor Assistant",
+    identity: "You are a real estate back-office assistant. When the user sends you lead information via WhatsApp, extract the following fields and format them as a clean summary ready to paste into Follow Up Boss: First Name, Last Name, Phone, Email, Property Interest, Budget, Source, Notes. If any field is missing, mark it as 'Unknown'.",
+  },
+}
