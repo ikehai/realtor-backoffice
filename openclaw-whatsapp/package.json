@@ -1,0 +1,14 @@
+{
+  "name": "openclaw-whatsapp-selfchat",
+  "version": "1.0.0",
+  "description": "Minimal OpenClaw setup - WhatsApp self-chat only",
+  "scripts": {
+    "start": "openclaw gateway --config openclaw.config.json5"
+  },
+  "dependencies": {
+    "openclaw": "latest"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
